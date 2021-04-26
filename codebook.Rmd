@@ -1,0 +1,183 @@
+---
+title: "Codebook"
+author: "Omar"
+date: "25/4/2021"
+output: html_document
+---
+## Project Description
+This is a project designed to clean and rearrange data in a tidy format.
+
+## Study design and data processing
+Thanks to the guide supplied to us in the course, we were able to understand what the variable meant and its function in the data.
+
+
+### Collection of the raw data
+-Download the file with the given url where the data will be found.  
+-Unzip the file and load all data needed to work the assignment.
+
+### Notes on the original (raw) data 
+-This data is in txt format.  
+-We will not be working with inertial signals.
+
+## Creating the tidy datafile
+
+### Guide to create the tidy data file
+-Download the data.  
+-Load the data by activity, subject and features for each test and train directories.  
+-Unify the test and train data by activity, subject and features.  
+-Rename the feature variable using the features text file.  
+-Merge activity, subject and feature in one consolidated data.  
+
+
+### Cleaning of the data
+Now we will subset the data we need, obtainig only mean and the standard deviation column using grep function to identify which column has the desired information, then we will subset the columns using the subset function and selecting which column we want.
+
+Aftewards we will describe what the numbers of the variable activity means, for that we will load the activity label file and designate each number to its activity.
+
+Next we will be changing the columns names to a more complete description of what it means.
+
+Finally we group the variable by subject and activity to calculate the mean for each group.
+
+## Description of the variables in the data.txt file
+
+-Dimensions 180 obs. of  68 variables
+-Variable names  
+ [1] "subject"                                       
+ [2] "activity"                                      
+ [3] "timeBodyAccelerometer-mean()-X"                
+ [4] "timeBodyAccelerometer-mean()-Y"                
+ [5] "timeBodyAccelerometer-mean()-Z"                
+ [6] "timeBodyAccelerometer-std()-X"                 
+ [7] "timeBodyAccelerometer-std()-Y"                 
+ [8] "timeBodyAccelerometer-std()-Z"                 
+ [9] "timeGravityAccelerometer-mean()-X"             
+[10] "timeGravityAccelerometer-mean()-Y"             
+[11] "timeGravityAccelerometer-mean()-Z"             
+[12] "timeGravityAccelerometer-std()-X"              
+[13] "timeGravityAccelerometer-std()-Y"              
+[14] "timeGravityAccelerometer-std()-Z"              
+[15] "timeBodyAccelerometerJerk-mean()-X"            
+[16] "timeBodyAccelerometerJerk-mean()-Y"            
+[17] "timeBodyAccelerometerJerk-mean()-Z"            
+[18] "timeBodyAccelerometerJerk-std()-X"             
+[19] "timeBodyAccelerometerJerk-std()-Y"             
+[20] "timeBodyAccelerometerJerk-std()-Z"             
+[21] "timeBodyGyroscope-mean()-X"                    
+[22] "timeBodyGyroscope-mean()-Y"                    
+[23] "timeBodyGyroscope-mean()-Z"                    
+[24] "timeBodyGyroscope-std()-X"                     
+[25] "timeBodyGyroscope-std()-Y"                     
+[26] "timeBodyGyroscope-std()-Z"                     
+[27] "timeBodyGyroscopeJerk-mean()-X"                
+[28] "timeBodyGyroscopeJerk-mean()-Y"                
+[29] "timeBodyGyroscopeJerk-mean()-Z"                
+[30] "timeBodyGyroscopeJerk-std()-X"                 
+[31] "timeBodyGyroscopeJerk-std()-Y"                 
+[32] "timeBodyGyroscopeJerk-std()-Z"                 
+[33] "timeBodyAccelerometerMagnitude-mean()"         
+[34] "timeBodyAccelerometerMagnitude-std()"          
+[35] "timeGravityAccelerometerMagnitude-mean()"      
+[36] "timeGravityAccelerometerMagnitude-std()"       
+[37] "timeBodyAccelerometerJerkMagnitude-mean()"     
+[38] "timeBodyAccelerometerJerkMagnitude-std()"      
+[39] "timeBodyGyroscopeMagnitude-mean()"             
+[40] "timeBodyGyroscopeMagnitude-std()"              
+[41] "timeBodyGyroscopeJerkMagnitude-mean()"         
+[42] "timeBodyGyroscopeJerkMagnitude-std()"          
+[43] "frequencyBodyAccelerometer-mean()-X"           
+[44] "frequencyBodyAccelerometer-mean()-Y"           
+[45] "frequencyBodyAccelerometer-mean()-Z"           
+[46] "frequencyBodyAccelerometer-std()-X"            
+[47] "frequencyBodyAccelerometer-std()-Y"            
+[48] "frequencyBodyAccelerometer-std()-Z"            
+[49] "frequencyBodyAccelerometerJerk-mean()-X"       
+[50] "frequencyBodyAccelerometerJerk-mean()-Y"       
+[51] "frequencyBodyAccelerometerJerk-mean()-Z"       
+[52] "frequencyBodyAccelerometerJerk-std()-X"        
+[53] "frequencyBodyAccelerometerJerk-std()-Y"        
+[54] "frequencyBodyAccelerometerJerk-std()-Z"        
+[55] "frequencyBodyGyroscope-mean()-X"               
+[56] "frequencyBodyGyroscope-mean()-Y"               
+[57] "frequencyBodyGyroscope-mean()-Z"               
+[58] "frequencyBodyGyroscope-std()-X"                
+[59] "frequencyBodyGyroscope-std()-Y"                
+[60] "frequencyBodyGyroscope-std()-Z"                
+[61] "frequencyBodyAccelerometerMagnitude-mean()"    
+[62] "frequencyBodyAccelerometerMagnitude-std()"     
+[63] "frequencyBodyAccelerometerJerkMagnitude-mean()"
+[64] "frequencyBodyAccelerometerJerkMagnitude-std()" 
+[65] "frequencyBodyGyroscopeMagnitude-mean()"        
+[66] "frequencyBodyGyroscopeMagnitude-std()"         
+[67] "frequencyBodyGyroscopeJerkMagnitude-mean()"    
+[68] "frequencyBodyGyroscopeJerkMagnitude-std()"
+
+### Variable meaning
+1.	subject: subject to study. Integer class.
+2.	activity: action the subject did for study (walking, walking upstairs, walking downstairs, sitting, standing, laying). Factor class.
+3.	timeBodyAccelerometer-mean()-X: Mean of time body accelerometer in the x axis. Numeric class.
+4.	timeBodyAccelerometer-mean()-Y: Mean of time body accelerometer in the y axis. Numeric class.
+5.	timeBodyAccelerometer-mean()-Z: Mean of time body accelerometer in the z axis Numeric class.
+6.	timeBodyAccelerometer-std()-X: Standard Deviation of time body Accelerometer in the x axis. Numeric class.
+7.	timeBodyAccelerometer-std()-Y: Standard Deviation of time body Accelerometer in the y axis. Numeric class.
+8.	timeBodyAccelerometer-std()-Z: Standard Deviation of time body Accelerometer in the z axis. Numeric class.
+9.	timeGravityAccelerometer-mean()-X: Mean of time gravity accelerometer in the x axis. Numeric class.
+10.	timeGravityAccelerometer-mean()-Y: Mean of time gravity accelerometer in the y axis. Numeric class.
+11.	timeGravityAccelerometer-mean()-Z: Mean of time gravity accelerometer in the z axis. Numeric class.
+12.	timeGravityAccelerometer-std()-X: Standard deviation of time gravity accelerometer in the x axis. Numeric class.
+13.	timeGravityAccelerometer-std()-Y: Standard deviation of time gravity accelerometer in the y axis. Numeric class.
+14.	timeGravityAccelerometer-std()-Z: Standard deviation of time gravity accelerometer in the z axis. Numeric class.
+15.	timeBodyAccelerometerJerk-mean()-X: Mean of time body accelerometer jerk in the x axis. Numeric class.
+16.	timeBodyAccelerometerJerk-mean()-Y: Mean of time body accelerometer jerk in the y axis. Numeric class.
+17.	timeBodyAccelerometerJerk-mean()-Z: Mean of time body accelerometer jerk in the z axis. Numeric class.
+18.	timeBodyAccelerometerJerk-std()-X: Standard deviation of time body accelerometer jerk in the x axis. Numeric class.
+19.	timeBodyAccelerometerJerk-std()-Y: Standard deviation of time body accelerometer jerk in the y axis. Numeric class.
+20.	timeBodyAccelerometerJerk-std()-Z: Standard deviation of time body accelerometer jerk in the z axis. Numeric class.
+21.	timeBodyGyroscope-mean()-X: Mean of time body gyroscope in the x axis. Numeric class.
+22.	timeBodyGyroscope-mean()-Y: Mean of time body gyroscope in the y axis. Numeric class.
+23.	timeBodyGyroscope-mean()-Z: Mean of time body gyroscope in the z axis. Numeric class.
+24.	timeBodyGyroscope-std()-X: Standard deviation of time body gyroscope in the x axis. Numeric class.
+25.	timeBodyGyroscope-std()-Y: Standard deviation of time body gyroscope in the y axis. Numeric class.
+26.	timeBodyGyroscope-std()-Z: Standard deviation of time body gyroscope in the z axis. Numeric class.
+27.	timeBodyGyroscopeJerk-mean()-X: Mean of time body gyroscope jerk in the x axis. Numeric class.
+28.	timeBodyGyroscopeJerk-mean()-Y: Mean of time body gyroscope jerk in the y axis. Numeric class.
+29.	timeBodyGyroscopeJerk-mean()-Z: Mean of time body gyroscope jerk in the z axis. Numeric class.
+30.	timeBodyGyroscopeJerk-std()-X: Standard deviation of time body gyroscope jerk in the x axis. Numeric class.
+31.	timeBodyGyroscopeJerk-std()-Y: Standard deviation of time body gyroscope jerk in the y axis. Numeric class.
+32.	timeBodyGyroscopeJerk-std()-Z: Standard deviation of time body gyroscope jerk in the z axis. Numeric class.
+33.	timeBodyAccelerometerMagnitude-mean(): Mean of time body Accelerometer Magnitud. Numeric class.
+34.	timeBodyAccelerometerMagnitude-std(): Standard deviation of time body Accelerometer Magnitude. Numeric class.
+35.	timeGravityAccelerometerMagnitude-mean():Mean of time gravity Accelerometer Magnitude. Numeric class.
+36.	timeGravityAccelerometerMagnitude-std(): Standard deviation of time gravity Accelerometer Magnitude. Numeric class.
+37.	timeBodyAccelerometerJerkMagnitude-mean(): Mean of time body Accelerometer Jerk Magnitude in the x axis. Numeric class.
+38.	timeBodyAccelerometerJerkMagnitude-std(): Standard deviation of time body Accelerometer Jerk Magnitude in the x axis. Numeric class.
+39.	timeBodyGyroscopeMagnitude-mean(): Mean of time body gyroscope magnitude. Numeric class.
+40.	timeBodyGyroscopeMagnitude-std(): Standard deviation of time body gyroscope magnitude. Numeric class.
+41.	timeBodyGyroscopeJerkMagnitude-mean(): Mean of time body gyroscope jerk magnitude. Numeric class.
+42.	timeBodyGyroscopeJerkMagnitude-std(): Standard deviation of time body gyroscope jerk magnitude. Numeric class.
+43.	frequencyBodyAccelerometer-mean()-X: Mean of frequency body accelerometer in the x axis. Numeric class.
+44.	frequencyBodyAccelerometer-mean()-Y: Mean of frequency body accelerometer in the y axis. Numeric class.
+45.	frequencyBodyAccelerometer-mean()-Z: Mean of frequency body accelerometer in the z axis. Numeric class.
+46.	frequencyBodyAccelerometer-std()-X: Standard deviation of frequency body accelerometer in the x axis. Numeric class.
+47.	frequencyBodyAccelerometer-std()-Y: Standard deviation of frequency body accelerometer in the y axis. Numeric class.
+48.	frequencyBodyAccelerometer-std()-Z: Standard deviation of frequency body accelerometer in the z axis. Numeric class.
+49.	frequencyBodyAccelerometerJerk-mean()-X: Mean of frequency body accelerometer jerk in the x axis. Numeric class.
+50.	frequencyBodyAccelerometerJerk-mean()-Y: Mean of frequency body accelerometer jerk in the y axis. Numeric class.
+51.	frequencyBodyAccelerometerJerk-mean()-Z: Mean of frequency body accelerometer jerk in the z axis. Numeric class.
+52.	frequencyBodyAccelerometerJerk-std()-X: Standard deviation of frequency body accelerometer jerk in the x axis. Numeric class.
+53.	frequencyBodyAccelerometerJerk-std()-Y: Standard deviation of frequency body accelerometer jerk in the y axis. Numeric class.
+54.	frequencyBodyAccelerometerJerk-std()-Z: Standard deviation of frequency body accelerometer jerk in the z axis. Numeric class.
+55.	frequencyBodyGyroscope-mean()-X: Mean of frequency body gyroscope in the x axis. Numeric class.
+56.	frequencyBodyGyroscope-mean()-Y: Mean of frequency body gyroscope in the y axis. Numeric class.
+57.	frequencyBodyGyroscope-mean()-Z: Mean of frequency body gyroscope in the z axis. Numeric class.
+58.	frequencyBodyGyroscope-std()-X: Standard deviation of frequency body gyroscope in the x axis. Numeric class.
+59.	frequencyBodyGyroscope-std()-Y: Standard deviation of frequency body gyroscope in the y axis. Numeric class.
+60.	frequencyBodyGyroscope-std()-Z: Standard deviation of frequency body gyroscope in the z axis. Numeric class.
+61.	frequencyBodyAccelerometerMagnitude-mean(): Mean of frequency body accelerometer magnitude. Numeric class.
+62.	frequencyBodyAccelerometerMagnitude-std(): Standard deviation of frequency body accelerometer magnitude. Numeric class.
+63.	frequencyBodyAccelerometerJerkMagnitude-mean(): Mean of frequency body accelerometer jerk magnitude. Numeric class.
+64.	frequencyBodyAccelerometerJerkMagnitude-std(): Standard deviation of frequency body accelerometer jerk magnitude. Numeric class.
+65.	frequencyBodyGyroscopeMagnitude-mean(): Mean of frequency body gyroscope magnitude. Numeric class.
+66.	frequencyBodyGyroscopeMagnitude-std(): Standard deviation of frequency body gyroscope magnitude. Numeric class.
+67.	frequencyBodyGyroscopeJerkMagnitude-mean(): Mean of frequency body gyroscope jerk magnitude. Numeric class.
+68.	frequencyBodyGyroscopeJerkMagnitude-std(): Standard deviation of frequency body gyroscope jerk magnitude. Numeric class.
+
